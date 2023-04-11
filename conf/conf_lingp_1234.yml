@@ -1,0 +1,41 @@
+algorithm:
+  name: algo.eaMuPlusLambdaUCB
+  args:
+    mu: 100
+    lambda_: 100
+    simulation_budget: 5
+    parallel_update: 16
+    save_every: 10
+    ngen: 200
+    cxpb: 0.0
+    mutpb: 1.0
+    budget_scheduler: [[50, 10], [100, 20], [190, 50]]
+
+population:
+  init_size: 100
+  
+selection:
+  name: selTournament
+  args:
+    tournsize: 5
+
+individual: Linear
+
+params:
+  env: "CartPole-v1"
+  function_set: small
+  c: 0.0
+  n_episodes: 1
+  n_steps: 500
+  gamma: 1.0
+  regCalcSize: 4
+  regConstSize: 10
+  init_size_min: 2
+  init_size_max: 5
+  pConst: 0.3
+  pBranch: 0.3
+  pIns: 0.3
+  pDel: 0.6
+  pSwap: 0.1
+  pMut: 0.5
+  n_thread: 16

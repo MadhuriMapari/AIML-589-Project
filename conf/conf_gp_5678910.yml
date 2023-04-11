@@ -1,0 +1,30 @@
+algorithm:
+  name: algo.eaMuPlusLambdaUCB
+  args:
+    mu: 500
+    lambda_: 500
+    simulation_budget: 25
+    parallel_update: 16
+    save_every: 10
+    ngen: 2000
+    cxpb: 0.1
+    mutpb: 0.9
+    budget_scheduler: [[500, 25], [1000, 50], [1500, 100], [1950, 250]]
+
+population:
+  init_size: 1000
+  
+selection:
+  name: selNSGA2
+  args:
+
+individual: Tree
+
+params:
+  env: "InvertedPendulumBulletEnv-v0"
+  function_set: extended
+  c: 0.0
+  n_episodes: 1
+  n_steps: 5000
+  gamma: 1.0
+  n_thread: 16

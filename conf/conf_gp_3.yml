@@ -1,0 +1,31 @@
+algorithm:
+  name: algo.eaMuPlusLambdaUCB
+  args:
+    mu: 250
+    lambda_: 500
+    simulation_budget: 25
+    parallel_update: 16
+    save_every: 10
+    ngen: 300
+    cxpb: 0.1
+    mutpb: 0.9
+    budget_scheduler: [[25, 50], [50, 100], [90, 250]]
+
+population:
+  init_size: 500
+  
+selection:
+  name: selNSGA2
+  args:
+
+individual: Tree
+
+params:
+  env: "Pendulum-v0"
+  function_set: small
+  c: 0.0
+  n_episodes: 1
+  n_steps: 1000
+  gamma: 1.0
+  n_thread: 16
+  max_tree_size: 4

@@ -1,0 +1,30 @@
+algorithm:
+  name: algo.eaMuPlusLambdaUCB
+  args:
+    mu: 100
+    lambda_: 100
+    simulation_budget: 5
+    parallel_update: 16
+    save_every: 10
+    ngen: 200
+    cxpb: 0.1
+    mutpb: 0.9
+    budget_scheduler: [[50, 10], [100, 20], [190, 50]]
+
+population:
+  init_size: 100
+  
+selection:
+  name: selNSGA2
+  args:
+
+individual: Tree
+
+params:
+  env: "CartPole-v1"
+  function_set: small
+  c: 0.0
+  n_episodes: 1
+  n_steps: 500
+  gamma: 1.0
+  n_thread: 16

@@ -1,0 +1,37 @@
+algorithm:
+  name: algo.qdLambda
+  args:
+    save_every: 10
+    batch_size: 100
+    lambda_: 500
+    ngen: 2000
+    cxpb: 0.0
+    mutpb: 1.0
+    show_warnings: True
+    verbose: True
+
+
+population:
+  init_size: 1000
+  args:
+    shape: [10, 10]
+    max_items_per_bin: 10
+    features_domain: [[0, 100], [0., 20.], [0.0, 1.2], [0.0, 1.2], [0.0, 1.2], [0.0, 1.0]]
+    fitness_domain: [[-200_000.0, 2000.0],]
+
+selection:
+  name: selQDRandom
+  args:
+
+individual: Tree
+
+params:
+  env: HopperBulletEnv-v0
+  function_set: extended
+  c: 0.0
+  n_episodes: 1
+  n_steps: 2000
+  gamma: 1.0
+  features_kept: [False, False, False, True, True, False]
+  tree_max_depth: 10
+  n_thread: 16

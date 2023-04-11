@@ -1,0 +1,36 @@
+algorithm:
+  name: algo.nqdLambda
+  args:
+    save_every: None
+    batch_size: 300
+    lambda_: 300
+    ngen: 500
+    cxpb: 0.05
+    mutpb: 0.9
+    show_warnings: True
+    verbose: True
+
+
+population:
+  init_size: 500
+  args:
+    max_items_per_bin: 5
+    shape: [25,10,3]
+    features_domain: [[0,100],[0,20],[0, 3]]
+    fitness_domain: [[-500_000.0, 1.0]]
+
+selection:
+  name: selNSGA2
+  args:
+
+individual: Tree
+
+params:
+  env: "Pendulum-v0"
+  function_set: small
+  c: 0.0
+  n_episodes: 3
+  n_steps: 500
+  gamma: 1
+  tree_max_depth: 10
+  n_thread: 16
