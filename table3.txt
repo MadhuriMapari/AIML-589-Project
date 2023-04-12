@@ -1,0 +1,10 @@
+CartPole-v1 500.0
+Acrobot-v1 -83.17
+MountainCarContinuous-v0 99.31
+Pendulum-v0 -154.36
+InvertedPendulumSwingupBulletEnv-v0 893.35
+BipedalWalker-v3 268.85
+BipedalWalkerHardcore-v3 9.27
+HopperBulletEnv-v0 999.19
+InvertedDoublePendulumBulletEnv-v0 9092.17
+LunarLanderContinuous-v2 287.58
