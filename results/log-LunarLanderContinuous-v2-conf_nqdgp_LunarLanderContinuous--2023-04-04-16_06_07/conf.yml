@@ -1,0 +1,36 @@
+algorithm:
+  name: algo.nqdLambda
+  args:
+    save_every: None
+    batch_size: 300
+    lambda_: 500
+    ngen: 1000
+    cxpb: 0.05
+    mutpb: 0.9
+    show_warnings: False
+    verbose: True
+
+
+population:
+  init_size: 500
+  args:
+    max_items_per_bin: 8
+    shape: [20,10,4]
+    features_domain: [[0,100],[0,20],[0, 8]]
+    fitness_domain: [[-500_000.0, 500.0]]
+
+selection:
+  name: selNSGA2
+  args:
+
+individual: Tree
+
+params:
+  env: "LunarLanderContinuous-v2"
+  function_set: extended
+  c: 0.0
+  n_episodes: 3
+  n_steps: 2000
+  gamma: 1
+  tree_max_depth: 10
+  n_thread: 16

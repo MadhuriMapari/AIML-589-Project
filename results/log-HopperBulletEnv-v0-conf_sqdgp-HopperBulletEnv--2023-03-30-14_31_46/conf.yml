@@ -1,0 +1,38 @@
+algorithm:
+  name: algo.sqdLambda
+  args:
+    save_every: None
+    batch_size: 1000
+    lambda_: 1500
+    ngen: 500
+    cxpb: 0.60
+    mutpb: 0.40
+    show_warnings: True
+    verbose: True
+
+
+population:
+  init_size: 1500
+  args:
+    max_items_per_bin: 5
+    shape: [10,25,15]
+    features_domain: [[0,20],[0,100],[0, 15]]
+    fitness_domain: [[-200_000.0, 3000.0]]
+  params:
+    nbinSize: 8
+
+selection:
+  name: selQDFitProp
+  args:
+
+individual: sTree
+
+params:
+  env: HopperBulletEnv-v0
+  function_set: extended
+  c: 0.0
+  n_episodes: 3
+  n_steps: 1000
+  gamma: 0.8
+  tree_max_depth: 10
+  n_thread: 16

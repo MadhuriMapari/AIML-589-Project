@@ -1,0 +1,38 @@
+algorithm:
+  name: algo.sqdLambda
+  args:
+    save_every: None
+    batch_size: 800
+    lambda_: 800
+    ngen: 200
+    cxpb: 0.05
+    mutpb: 0.9
+    show_warnings: False
+    verbose: True
+
+
+population:
+  init_size: 1000
+  args:
+    max_items_per_bin: 5
+    shape: [20,10]
+    features_domain: [[0,100],[0,20]]
+    fitness_domain: [[-500_000.0, 15000.0]]
+  params:
+    binSize: 8
+    
+selection:
+  name: selNSGA2
+  args:
+
+individual: Tree
+
+params:
+  env: "InvertedDoublePendulumBulletEnv-v0"
+  function_set: extended
+  c: 0.0
+  n_episodes: 3
+  n_steps: 1000
+  gamma: 1
+  tree_max_depth: 10
+  n_thread: 16
